@@ -240,6 +240,7 @@ elif page=="CryptoTracer":
 				    	cryptic.subheader("Analyze Crypto Performance:")
 				    	cryptic.info("You can also sort the values")
 					cryptic.dataframe(df)
+					
 				except:
 					st.info("Performance details unavailable..Refresh again or change time frame")	
 
