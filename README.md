@@ -1,7 +1,7 @@
 # CryptoTracer
 Submission for SIAM VIT Hackulus 2021.
 
-You can interact with the web application @:
+You can interact with the web application @:<br>
 https://share.streamlit.io/sharan-babu/cryptotracer/main/CryptoTracer.py
 
 <b>Steps to run the website on your local machine</b>:
