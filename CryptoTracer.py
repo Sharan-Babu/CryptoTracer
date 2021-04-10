@@ -4,7 +4,6 @@ import streamlit as st
 from time import sleep
 import pandas as pd
 import matplotlib.pyplot as plt
-import requests
 
 st.sidebar.title('CryptoTracer 💹')
 st.sidebar.text("@ your service")
@@ -231,18 +230,17 @@ elif page=="CryptoTracer":
 				#st.text("")
 				sleep(0.2)
 				#st.text("hi")
-				try:
-				    	res  = finnhub_client.crypto_candles(ticker_symbol, timeframe, 1590988249, 1591852249)
-				    	df = pd.DataFrame(res)
-				    	df.rename(columns={'c': 'Close Price', 'h': 'High Price','l': 'Low Price','o': 'Open Price','s': 'Status','t': 'Timestamp','v': 'Volume'}, inplace=True)
-				    	cryptic = st.beta_expander("Crypto Performance:",expanded=True)
-				    	#st.subheader('Stock Performance')
-				    	cryptic.subheader("Analyze Crypto Performance:")
-				    	cryptic.info("You can also sort the values")
-					cryptic.dataframe(df)
-					
-				except:
-					st.info("Performance details unavailable..Refresh again or change time frame")	
+				#try:
+				res  = finnhub_client.crypto_candles(ticker_symbol, timeframe, 1590988249, 1591852249)
+				df = pd.DataFrame(res)
+				df.rename(columns={'c': 'Close Price', 'h': 'High Price','l': 'Low Price','o': 'Open Price','s': 'Status','t': 'Timestamp','v': 'Volume'}, inplace=True)
+				cryptic = st.beta_expander("Crypto Performance:",expanded=True)
+				#st.subheader('Stock Performance')
+				cryptic.subheader("Analyze Crypto Performance:")
+				cryptic.info("You can also sort the values")
+				cryptic.dataframe(df)
+				#except:
+					#st.info("Performance details unavailable..Refresh again or change time frame")	
 
 
 
